@@ -8,3 +8,6 @@ data/*
 coverage/
 *.log
 .DS_Store
+
+.venv-finetune/
+__pycache__/

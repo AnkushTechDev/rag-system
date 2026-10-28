@@ -13,3 +13,11 @@ Validated on 28 October 2026 with Node.js 22.23.2 in the actual `rag-system` fol
 Ollama, OpenAI and Qdrant adapters were tested with mocked transport contracts and a fake-model orchestration test. They were **not tested against live services** in this run. Actual semantic retrieval and generation require your configured provider.
 
 Browser automation could not start in this session, so screenshot-based visual verification and browser interaction testing remain unverified. The production build and HTTP checks do not substitute for visual QA.
+
+## Fine-tuning extension
+
+- Full suite: 34 tests pass after adding dataset, API and CLI coverage.
+- Production Next.js build and formatting checks pass.
+- The running Next.js proxy serves the fine-tuning sample and preparation endpoints successfully. The sample splits into 24 training, four validation and four test examples.
+- Tests verify group leakage prevention, duplicate/conflict handling, deterministic export, plan-only CLI execution, checksum mismatch rejection and actual-response comparison contracts with mocked model transports.
+- Actual MLX optimization, model downloads and live adapter inference were not run. No trained-model quality improvement is claimed. Browser visual QA remains unverified in this session.

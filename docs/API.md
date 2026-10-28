@@ -52,3 +52,11 @@ This changes the current index, not just the next query. New chunk boundaries ma
 - 500 unexpected internal failure; use the request ID to inspect server logs.
 
 This API has no login or authorization and is bound to loopback for local learning. It is not a public multi-tenant API.
+
+## Fine-tuning learning endpoints
+
+- `GET /api/fine-tuning`: sample JSONL, comparison configuration, and an explicit external-training-not-tracked status.
+- `POST /api/fine-tuning/prepare`: `{jsonl, seed?}` validates and returns train/valid/test JSONL strings, counts, warnings and fingerprint. Preparation does not write weights, launch jobs or call a model. Validation issues are returned in a `valid:false` report; malformed request fields return 400.
+- `POST /api/fine-tuning/compare`: `{question, system?}` calls the two configured local servers, returning actual base/tuned responses and support-triage schema validity. Requires `FINETUNE_COMPARE_ENABLED=true`; otherwise 422. Model server URLs are server-owned environment configuration, never user-provided URLs.
+
+See FINE_TUNING.md for the optional CLI/Python workflow and comparison limitations.

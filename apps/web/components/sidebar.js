@@ -4,6 +4,7 @@ import {
   Boxes,
   ChevronRight,
   FileText,
+  FlaskConical,
   GraduationCap,
   Layers3,
   LayoutDashboard,
@@ -14,6 +15,7 @@ const navigation = [
   { id: 'lab', label: 'Retrieval playground', icon: ScanSearch },
   { id: 'knowledge', label: 'Knowledge base', icon: FileText },
   { id: 'interview', label: 'Interview prep', icon: GraduationCap },
+  { id: 'finetuning', label: 'Fine-tuning lab', icon: FlaskConical },
   { id: 'evaluation', label: 'Evaluation lab', icon: LayoutDashboard },
 ];
 export function Sidebar({ tab, onTab, status, history, onHistory, onReset, busy }) {

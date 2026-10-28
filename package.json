@@ -18,7 +18,9 @@
     "eval": "node scripts/evaluate.js",
     "check": "npm run format:check && npm test && npm run build",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "finetune:prepare": "node scripts/fine-tuning/prepare.js",
+    "finetune:train": "node --env-file-if-exists=.env scripts/fine-tuning/train.js"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",

@@ -82,3 +82,9 @@ Each `stage()` measures elapsed time around actual execution. The UI displays co
 `packages/rag-core/test/algorithms.test.js` tests mathematical behavior, Unicode boundaries, context budget and citation failures. `apps/api/test/service.test.js` exercises real composition with temporary snapshots and fake model adapters. `providers.test.js` mocks transport responses to test request contracts; it is not a live provider integration test. `http.test.js` exercises Express with an actual ephemeral loopback listener.
 
 `fixtures/evaluation.json` contains question/relevant-document pairs. `scripts/evaluate.js` builds an isolated corpus, runs lexical retrieval, and reports document-level metrics. Its threshold detects regressions, not enterprise readiness. The UI evaluation uses the current corpus; the CLI uses isolated starter data.
+
+## Fine-tuning extension
+
+The dataset preparation code is separate from document ingestion: assistant target outputs are training labels, not retrieval passages. `packages/rag-core/src/fine-tuning.js` validates a bounded single-turn format, deduplicates examples, merges overlapping scenario groups and deterministically exports disjoint splits. `apps/api/src/fine-tuning.js` exposes preparation and actual local-model comparison. `FineTuning` in the UI invalidates reports when examples change, supports downloads, and never simulates trained weights.
+
+The prepare CLI writes versioned datasets with checksums. The train CLI verifies those files, prints a plan by default, and only spawns MLX with `--execute`. The optional Python runtime is pinned separately in `training/requirements-mlx.txt`. Read FINE_TUNING.md for the full annotated workflow, what gets optimized, and how to evaluate before claiming an improvement.

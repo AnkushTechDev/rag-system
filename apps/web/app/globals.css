@@ -2059,3 +2059,240 @@ td span {
     scroll-behavior: auto !important;
   }
 }
+
+/* Fine-tuning remains a separate learning workflow from retrieval configuration. */
+.finetune-concepts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin: 2px 0 30px;
+}
+.finetune-concepts article {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 8px;
+  padding: 21px;
+}
+.finetune-concepts article > span {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #a68b72;
+}
+.finetune-concepts h3 {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 13px 0 9px;
+  color: #647985;
+}
+.finetune-concepts p,
+.fine-help {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #7b8b96;
+}
+.fine-section {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+}
+.fine-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.fine-section-title h2 {
+  font-size: 21px;
+  letter-spacing: -0.5px;
+  color: #607480;
+  margin-top: 12px;
+}
+.dataset-label {
+  display: block;
+  font-size: 10px;
+  color: #80909b;
+  margin: 20px 0 10px;
+}
+.dataset-editor {
+  width: 100%;
+  font-family: monospace;
+  font-size: 10px;
+  line-height: 1.8;
+  min-height: 220px;
+  padding: 17px;
+  background: #f5f7f8;
+  color: #647a88;
+  border: 1px solid #dce4e9;
+  border-radius: 7px;
+  white-space: pre;
+}
+.dataset-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 14px;
+}
+.dataset-actions > span {
+  font-size: 9px;
+  color: #8f9da6;
+}
+.dataset-actions > div {
+  display: flex;
+  gap: 9px;
+}
+.dataset-report {
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+}
+.dataset-report h3 {
+  font-size: 13px;
+  color: #819075;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+.dataset-report li {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #a57759;
+  margin-bottom: 6px;
+}
+.dataset-report .metric-grid {
+  margin: 0;
+}
+.dataset-report .metric-grid article {
+  background: #fbfcfd;
+}
+.dataset-report .metric-grid .text-button {
+  margin-top: 13px;
+  font-size: 9px;
+}
+.fingerprint {
+  font-size: 9px;
+  overflow-wrap: anywhere;
+  color: #9dabb4;
+  margin-top: 17px;
+}
+.dataset-warnings {
+  margin-top: 18px;
+  padding-left: 17px;
+}
+.dataset-report .dataset-warnings li {
+  font-size: 10px;
+  color: #9b8c7b;
+  line-height: 1.9;
+}
+.command-block {
+  background: #1d303f;
+  color: #c9d7de;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 11px;
+  line-height: 2;
+  overflow: auto;
+  margin: 19px 0;
+}
+.training-explainer {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 18px;
+  margin-top: 18px;
+  background: white;
+}
+.training-explainer summary {
+  font-size: 11px;
+  color: #8d7b66;
+  cursor: pointer;
+}
+.training-explainer p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #7c8f9b;
+  margin-top: 17px;
+}
+.fine-compare-form {
+  margin-top: 20px;
+}
+.fine-compare-form label {
+  font-size: 10px;
+  color: #8397a4;
+}
+.fine-compare-form textarea {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0 14px;
+  border: 1px solid #dce5eb;
+  border-radius: 7px;
+  line-height: 1.8;
+  font-size: 12px;
+  color: #6a8292;
+  background: white;
+}
+.fine-compare-form > span {
+  display: block;
+  font-size: 9px;
+  color: #93a3ad;
+  margin-top: 11px;
+}
+.finetune-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+  margin: 24px 0;
+}
+.finetune-comparison article {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+}
+.finetune-comparison pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+  line-height: 1.9;
+  color: #78909f;
+}
+.finetune-comparison p {
+  font-size: 9px;
+  color: #9b8974;
+  line-height: 1.8;
+}
+@media (max-width: 750px) {
+  .finetune-concepts {
+    grid-template-columns: 1fr;
+  }
+  .dataset-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .dataset-actions > div {
+    flex-wrap: wrap;
+  }
+  .fine-section-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .fine-section-title h2 {
+    font-size: 19px;
+  }
+  .finetune-comparison {
+    grid-template-columns: 1fr;
+  }
+  .dataset-report {
+    padding: 15px;
+  }
+  .command-block {
+    font-size: 10px;
+    padding: 16px;
+  }
+  .dataset-editor {
+    font-size: 9px;
+  }
+}

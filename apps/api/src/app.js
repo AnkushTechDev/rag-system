@@ -3,6 +3,7 @@ import { randomUUID } from 'node:crypto';
 import { ZodError } from 'zod';
 import { AppError } from './errors.js';
 import { DocumentInput, QueryInput, ChunkSettings } from './validation.js';
+import { registerFineTuning } from './fine-tuning.js';
 import { interviewTopics } from './learning.js';
 
 /** Composition is injected: HTTP integration tests can exercise the real app without listening on a port. */
@@ -16,6 +17,7 @@ export function createApp(service, { log = console.log } = {}) {
     next();
   });
   app.use(express.json({ limit: '256kb' }));
+  registerFineTuning(app);
   app.get('/api/health', (_req, res) => res.json({ status: 'ok', ...service.status() }));
   app.get('/api/documents', (_req, res) => res.json(service.documents()));
   app.get('/api/documents/:id', (req, res) => res.json(service.document(req.params.id)));

@@ -5,6 +5,7 @@ import { useWorkshop } from '../hooks/use-workshop';
 import { Sidebar } from '../components/sidebar';
 import { Playground, PipelineInspector } from '../components/playground';
 import { AddDocument, Knowledge } from '../components/knowledge';
+import { FineTuning } from '../components/fine-tuning';
 import { Evaluation, Interview } from '../components/learning';
 
 /** Composition-only page. Retrieval logic belongs to the backend/core package, not React. */
@@ -17,6 +18,7 @@ export default function Home() {
     knowledge: 'Knowledge base',
     interview: 'Interview prep',
     evaluation: 'Evaluation lab',
+    finetuning: 'Fine-tuning lab',
   };
   function reset() {
     workshop.clear();
@@ -83,6 +85,7 @@ export default function Home() {
               />
             )}{' '}
             {tab === 'interview' && <Interview topics={workshop.topics} />}{' '}
+            {tab === 'finetuning' && <FineTuning onError={workshop.setError} />}
             {tab === 'evaluation' && <Evaluation onError={workshop.setError} />}
             <footer className="footer">
               <span>

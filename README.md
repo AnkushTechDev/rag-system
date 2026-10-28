@@ -68,6 +68,18 @@ Set a real provider and `VECTOR_STORE=qdrant` in `.env`, then restart. The adapt
 
 The included Compose service exposes Qdrant only on loopback. It is optional; nothing starts Docker automatically. Contract tests exercise request construction. Running against actual Ollama, OpenAI, and Qdrant services requires those services/credentials and is a separate verification step.
 
+## Fine-tuning lab
+
+Open **Fine-tuning lab** to inspect 32 synthetic training demonstrations, validate/deduplicate them, prevent scenario leakage, and download deterministic training/validation/test files. A separate MLX LoRA launcher performs actual local training on Apple Silicon when explicitly executed. The optional comparison calls real base/adapter servers; it never fabricates tuned outputs. Preparing data does not train a model.
+
+See [the complete fine-tuning workflow](docs/FINE_TUNING.md) for setup, training, held-out evaluation, serving, code explanations, and interview questions. The example teaches structured support-triage behavior separately from RAG evidence retrieval.
+
+```sh
+npm run finetune:prepare                 # offline files + versioned manifest
+npm run finetune:train -- --run RUN      # plan only; no training or downloads
+# After optional MLX installation, add --execute to launch real training.
+```
+
 ## Commands
 
 ```sh
