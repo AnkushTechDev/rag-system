@@ -1,0 +1,44 @@
+[
+  { "question": "What is RAG and does it change model weights?", "relevant": ["RAG fundamentals"] },
+  {
+    "question": "How should chunk overlap and chunk size be selected?",
+    "relevant": ["Chunking and context windows"]
+  },
+  {
+    "question": "Why must embedding models have the same dimensions?",
+    "relevant": ["Embeddings and vector databases"]
+  },
+  {
+    "question": "How does BM25 use term frequency saturation?",
+    "relevant": ["BM25, hybrid search and reranking"]
+  },
+  {
+    "question": "What is reciprocal rank fusion RRF?",
+    "relevant": ["BM25, hybrid search and reranking"]
+  },
+  {
+    "question": "What does MMR penalize when selecting context?",
+    "relevant": ["BM25, hybrid search and reranking"]
+  },
+  {
+    "question": "Explain recall at k, reciprocal rank, and nDCG",
+    "relevant": ["Evaluation and failure analysis"]
+  },
+  {
+    "question": "How should a RAG system handle prompt injection?",
+    "relevant": ["Production, security and prompt injection"]
+  },
+  {
+    "question": "What should a cache key include after document changes?",
+    "relevant": ["Production, security and prompt injection"]
+  },
+  { "question": "How is fine-tuning different from RAG?", "relevant": ["RAG fundamentals"] },
+  {
+    "question": "What is HNSW approximate nearest neighbor search?",
+    "relevant": ["Embeddings and vector databases"]
+  },
+  {
+    "question": "Why are citation IDs not proof of factual entailment?",
+    "relevant": ["Evaluation and failure analysis"]
+  }
+]

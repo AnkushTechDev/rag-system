@@ -1,0 +1,12 @@
+{
+  "name": "@rag/core",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./chunking": "./src/chunking.js",
+    "./retrieval": "./src/retrieval.js",
+    "./context": "./src/context.js",
+    "./evaluation": "./src/evaluation.js"
+  }
+}

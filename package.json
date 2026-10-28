@@ -1,0 +1,27 @@
+{
+  "name": "rag-workshop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web \"npm run dev -w @rag/api\" \"npm run dev -w @rag/web\"",
+    "build": "npm run build -w @rag/web",
+    "start": "concurrently -k -n api,web \"npm run start -w @rag/api\" \"npm run start -w @rag/web\"",
+    "test": "node --test packages/rag-core/test/*.test.js apps/api/test/*.test.js",
+    "eval": "node scripts/evaluate.js",
+    "check": "npm run format:check && npm test && npm run build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "prettier": "^3.6.2"
+  }
+}
